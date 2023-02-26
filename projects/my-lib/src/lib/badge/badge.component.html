@@ -1,0 +1,8 @@
+<div class="has-left-margin-{{hasLeftMargin}} has-right-margin-{{hasRightMargin}}">
+    <div *ngIf="badge.type==='icon'" class="icon-badge  transparent-background-{{transparentBackground}}">
+        <mat-icon svgIcon="{{badge.svgIcon}}" class="spt-icon-size-l"></mat-icon>
+    </div>
+    <div *ngIf="badge.type==='text' || text != null" class="text-badge {{badgeClass}}">
+        {{displayText}}
+    </div>
+</div>

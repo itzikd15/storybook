@@ -1,0 +1,311 @@
+//region Current Spotlight Color Palette
+/**
+[Figma Spotlight Color Palette]{@link https://www.figma.com/file/DLBx3NdKy2TPj7h8nWxv2H/Spotlight?node-id=1634%3A94}
+Remember to update the color palette map ($spt-primary, and $spt-warn) used for custom theming of Angular Material in
+palettes.scss if a large color palette change is being done. i.e. Primary Blue and Red (Error) colors are being overhauled.
+ */
+// Primary Blue
+$spt-blue-600: #025DBE;
+$spt-blue-500: #006FE6;
+$spt-blue-400: #1A8AFF;
+$spt-blue-300: #52A8FF;
+$spt-blue-200: #8AC6FF;
+$spt-blue-100: #C2E2FF;
+$spt-blue-50:  #DAEDFF;
+$spt-blue-00:  #E8F3FF;
+// Grey
+$spt-grey-500: #1A1A1A;
+$spt-grey-400: #4A4A4A;
+$spt-grey-300: #939393;
+$spt-grey-200: #C4C4C4;
+$spt-grey-100: #E2E2E2;
+$spt-grey-50:  #EEEEEE;
+$spt-grey-00:  #FAFAFA;
+// Secondary
+$spt-green-500: #28AB79;
+$spt-green-400: #28C78A;
+$spt-green-300: #45DDA3;
+$spt-green-200: #8CE5C3;
+$spt-green-100: #D4F4E8;
+$spt-green-50:  #DDFBF0;
+$spt-green-00:  #ECFFF8;
+$spt-violet-500: #5038DC;
+$spt-violet-400: #6045FF;
+$spt-violet-300: #836DFF;
+$spt-violet-200: #AC9EFF;
+$spt-violet-100: #DFDAFF;
+$spt-violet-50:  #EDEAFF;
+$spt-violet-00:  #F6F5FF;
+$spt-orange-500: #EE8E02;
+$spt-orange-400: #FFA726;
+$spt-orange-300: #FFBB57;
+$spt-orange-200: #FACD8C;
+$spt-orange-100: #FFEDD4;
+$spt-orange-50:  #FFF5E8;
+$spt-orange-00:  #FFFAF4;
+$spt-yellow-500: #F5DC00;
+$spt-yellow-400: #FFE60B;
+$spt-yellow-300: #FFEE55;
+$spt-yellow-200: #FFF27C;
+$spt-yellow-100: #FFF6A5;
+$spt-yellow-50:  #FFF9C9;
+$spt-yellow-00:  #FDFAE0;
+$spt-red-500: #D20000;
+$spt-red-400: #FF0000;
+$spt-red-300: #FF5252;
+$spt-red-200: #FF9A9A;
+$spt-red-100: #FFCCCC;
+$spt-red-50:  #FFE2E2;
+$spt-red-00:  #FFF4F4;
+// Dataviz
+$spt-pink-500: #AD50BC;
+$spt-pink-400: #C86DD7;
+$spt-pink-300: #D692E1;
+$spt-pink-200: #EAAEF3;
+$spt-pink-100: #F8CCFF;
+$spt-pink-50:  #FBE0FF;
+$spt-pink-00:  #FDF2FF;
+$spt-purple-500: #6208B1;
+$spt-purple-400: #7B12D7;
+$spt-purple-300: #9236E2;
+$spt-purple-200: #AD49FD;
+$spt-purple-100: #CC90FD;
+$spt-purple-50:  #EAD0FF;
+$spt-purple-00:  #F4E8FF;
+$spt-brown-500: #794B07;
+$spt-brown-400: #955D09;
+$spt-brown-300: #A7762D;
+$spt-brown-200: #BE9352;
+$spt-brown-100: #DDC093;
+$spt-brown-50:  #E9D3B2;
+$spt-brown-00:  #FFEFD8;
+$spt-dark-blue-500: #014372;
+$spt-dark-blue-400: #02558F;
+$spt-dark-blue-300: #2575AC;
+$spt-dark-blue-200: #4C8FBD;
+$spt-dark-blue-100: #6FB0DB;
+$spt-dark-blue-50:  #98C9EA;
+$spt-dark-blue-00:  #D0ECFF;
+$spt-turquoise-500: #0AABD0;
+$spt-turquoise-400: #29C9EE;
+$spt-turquoise-300: #76DBF2;
+$spt-turquoise-200: #9BECFF;
+$spt-turquoise-100: #C7F4FF;
+$spt-turquoise-50:  #E2F9FF;
+$spt-turquoise-00:  #EDFCFF;
+// Actions
+$spt-clickable: $spt-blue-100;
+$spt-selected:  $spt-blue-100;
+$spt-disabled:  $spt-grey-200;
+$spt-hover:     $spt-blue-00;
+$spt-success:   $spt-green-400;
+$spt-error:     $spt-red-400;
+// Base - Not part of Spotlight, added for consistency for migration
+$spt-base-white:            #FFFFFF;
+$spt-base-black:            #000000;
+$spt-base-black-87-opacity: rgba(black, 0.87);
+$spt-base-font-style:       normal;
+$spt-base-font-weight:      400;
+$spt-base-font-size:        14px;
+$spt-base-line-height:      20px;
+//endregion
+
+//region Deprecated palettes vars
+// @deprecated
+$black-87-opacity: rgba(black, 0.87);
+// @deprecated
+$dark-primary-text: rgba(black, 0.87);
+// @deprecated
+$light-primary-text: white;
+//endregion
+
+//region Deprecated Table Colors
+// table colors
+// @deprecated
+$table-text-color:       $spt-grey-400;
+// @deprecated
+$table-border-color:     #d0d1d3;
+// @deprecated
+$table-background-color: $spt-base-white;
+//endregion
+
+//region Deprecated Base Vars
+// Base Vars
+// @deprecated
+$primary-color:             $spt-blue-400;
+// @deprecated
+$warn-color:                #ff4d6a;
+// @deprecated
+$disabled-color:            #c5e1ff;
+// @deprecated
+$disabled-background-color: #2d3a48;
+// @deprecated
+$disabled-opacity:          0.3;
+// @deprecated
+$base-size:                 1rem;
+// @deprecated
+$base-font-size:            $spt-base-font-size;
+// @deprecated
+$base-line-height:          1.5;
+// @deprecated
+$base-font-weight:          normal;
+// @deprecated
+$base-background-color:     $spt-base-white;
+// @deprecated
+$base-color:                $spt-base-black;
+//endregion
+
+//region Deprecated Colors Palette
+// Colors Palette
+// @deprecated
+$spot-blue:    $spt-blue-400;
+// @deprecated
+$spot-blue-20: #D1E8FF; // $spt-blue-50
+// @deprecated
+$spot-blue-10: $spt-blue-00;
+// @deprecated
+$spot-blue-5:  #F3F9FF;
+
+// @deprecated
+$spot-dark-grey:   $spt-grey-400;
+// @deprecated
+$spot-grey:        #9E9E9E; // $spt-grey-300
+// @deprecated
+$spot-light-grey1: #BEBEBE; // $spt-grey-200
+// @deprecated
+$spot-light-grey2: #D0D1D3; // $spt-grey-200
+// @deprecated
+$spot-grey-200:    $spt-grey-200;
+// @deprecated
+$spot-grey-50:     $spt-grey-50;
+
+// @deprecated
+$spot-green:    $spt-green-400;
+// @deprecated
+$spot-green-20: $spt-green-100;
+
+// @deprecated
+$spot-purple:    $spt-violet-400;
+// @deprecated
+$spot-purple-20: $spt-violet-100;
+
+// @deprecated
+$spot-yellow:    $spt-orange-400;
+// @deprecated
+$spot-yellow-20: $spt-orange-100;
+
+// @deprecated
+$spot-red:    $spt-red-400;
+// @deprecated
+$spot-red-20: $spt-red-100;
+
+// @deprecated
+$spot-pink:    $spt-pink-400;
+// @deprecated
+$spot-pink-20: #F4E2F7;
+
+// @deprecated
+$spot-turquoise:    $spt-turquoise-400;
+// @deprecated
+$spot-turquoise-20: #D4F4FC;
+
+// @deprecated
+$spot-light-purple: $spt-purple-400;
+// @deprecated
+$spot-turquoise-20: #E5D0F7;
+
+// @deprecated
+$spot-brown:    $spt-brown-400;
+// @deprecated
+$spot-brown-20: #EADFCE;
+
+// @deprecated
+$spot-dark-blue:    $spt-dark-blue-400;
+// @deprecated
+$spot-dark-blue-20: #CCDDE9;
+
+// @deprecated
+$spot-white: $spt-base-white;
+
+// @deprecated
+$spot-blue-300:   $spt-blue-300;
+// @deprecated
+$spot-green-300:  $spt-green-300;
+// @deprecated
+$spot-orange-300: $spt-orange-300;
+// @deprecated
+$spot-red-300:    $spt-red-300;
+// @deprecated
+$spot-grey-500:   $spt-grey-500;
+
+// old legacy colors:
+// @deprecated
+$spotinst-light-red:             #ec4e4e; // $spt-red-300
+// @deprecated
+$spotinst-red:                   $spot-red;
+// @deprecated
+$spotinst-orange:                #f5a623;
+// @deprecated
+$spotinst-deep-orange:           #F48619;
+// @deprecated
+$spotinst-yellow:                #f8e71c;
+// @deprecated
+$spotinst-pink:                  $spot-pink;
+// @deprecated
+$spotinst-deep-pink:             #e400a4; // cloud-analyzer color
+// @deprecated
+$spotinst-purple:                #7265e7;
+// @deprecated
+$spotinst-purple-light:          $spot-purple;
+// @deprecated
+$spotinst-purply-blue:           $spot-light-purple;
+// @deprecated
+$spotinst-deep-light-blue:       #D4EEEF;
+// @deprecated
+$spotinst-deep-light-blue-hover: #DBEDFF;
+// @deprecated
+$spotinst-light-blue:            $spot-turquoise;
+// @deprecated
+$spotinst-blue-444:              $spt-blue-400;
+// @deprecated
+$spotinst-blue-hover:            #3D9EFF;
+// @deprecated
+$spotinst-blue:                  $spt-blue-400;
+// @deprecated
+$spotinst-very-light-blue:       #E9F4FF;
+// @deprecated
+$spotinst-very-light-green:      #FAFDFE;
+// @deprecated
+$spotinst-light-green:           #59eaa0;
+// @deprecated
+$spotinst-med-green:             $spot-green;
+// @deprecated
+$spotinst-green:                 #28c776;
+// @deprecated
+$spotinst-deep-light-green:      #24c875;
+// @deprecated
+$spotinst-deep-green:            #00aeb6;
+// @deprecated
+$spotinst-pale-grey:             #f6f9fb;
+// @deprecated
+$spotinst-grey:                  #f8f8f8;
+// @deprecated
+$spotinst-very-light-grey:       $spt-grey-00;
+
+// @deprecated
+$spotinst-light-grey:            #efefef;
+// @deprecated
+$spotinst-deep-light-grey:       $spot-light-grey1;
+// @deprecated
+$spotinst-medium-grey:           #9b9b9b;
+// @deprecated
+$spotinst-med-grey:              #878787;
+// @deprecated
+$spotinst-deep-medium-grey:      #787878;
+// @deprecated
+$spotinst-dark-grey:             $spt-grey-400;
+// @deprecated
+$spotinst-very-light-pink:       #e7e7e7;
+// @deprecated
+$spotinst-white: $spt-base-white;
+//endregion

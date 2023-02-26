@@ -1,0 +1,30 @@
+import {Meta} from '@storybook/addon-docs';
+
+<Meta title="Components/Badge/Badge ReadMe" />
+
+# Badge Component ReadMe
+
+The Badge Component in the spot-client-shared library will be used by future Angular applications.
+This component is based on the [**Form List Component**](http://storybook-public.dev.spotinst.com:8890/?path=/docs/components-genericform-genericform-readme--page)
+
+
+[**FINF-826: Add Badge Support**](https://spotinst.atlassian.net/browse/FINF-826)
+
+[**Figma Spotlight: Badge**](https://www.figma.com/file/DLBx3NdKy2TPj7h8nWxv2H/Spotlight?node-id=1792%3A5)
+
+
+
+##### Badge Component has the following properties:
+
+<li><b>@Input()</b> badgeName: BadgeNames - predefined badges:  (Icons - AWS,GCP,AZURE / Labels -  ASSIGNED, NEW ,BETA ,IDLE ,PREVIEW)</li>
+<li><b>@Input()</b> text: string - custom text</li>
+<li><b>@Input()</b> color: BadgeColor - custom color</li>
+<li><b>@Input()</b> noLeftMargin: boolean (<b>FALSE</b> by default)</li>
+<li><b>@Input()</b> noRightMargin: boolean (<b>FALSE</b> by default)</li>
+
+
+An example of this is:
+```
+  <spt-badge text="LIVE" [color]="badgeColors.GREEN" ></spt-badge>
+  <spt-badge badgeName="{{badgeNames.AZURE}}" noRightMargin="true"></spt-badge>
+```

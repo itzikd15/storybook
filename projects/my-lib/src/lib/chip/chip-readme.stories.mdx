@@ -1,0 +1,70 @@
+import {Meta} from '@storybook/addon-docs';
+
+<Meta title="Components/Chip/Chip ReadMe" />
+
+<style>{`
+  .subheading {
+    --mediumdark: '#999999';
+    font-weight: 900;
+    font-size: 13px;
+    color: #999;
+    letter-spacing: 6px;
+    line-height: 24px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    margin-top: 40px;
+  }
+`}</style>
+
+# Chip Component ReadMe
+
+The Chip Component in the `spot-client-shared` library will be used by other Angular applications consuming it. The chip
+component provides a consistent way to present information to the user. According to [material design](https://material.io/components/chips)
+chips are: "Chips are compact elements that represent an input, attribute, or action." They focus on being compact, relevant, and focused.
+
+[**JQL FINF Filter: Chips**](https://spotinst.atlassian.net/issues/?jql=text%20~%20%22chip%22%20AND%20project%20IN%20(10088))
+
+[**FINF-15: Create Chip**](https://spotinst.atlassian.net/browse/FINF-15)
+
+[**Figma Spotlight: Chips**](https://www.figma.com/file/DLBx3NdKy2TPj7h8nWxv2H/Spotlight?node-id=1047%3A617)
+
+<div className="subheading">Passing Data</div>
+<p>The Chip Component can pass be passed data via @Input bindings or content can be projected into the component
+through template transclusion using ngContent slot</p>
+
+Content Projection Slots
+<li>Content placed between the ChipComponent opening and closing selector tags will be rendered using content projection of an unnamed slot</li>
+
+<div className="subheading">Technical</div>
+
+Import the ChipModule from the spot-client-shared repository into the module that requires it.
+The relevant selector for the chip component is `spt-chip`
+
+##### Chip Component has the following properties:
+
+<li><b>@Input()</b> label: string</li>
+<li><b>@Input()</b> isRemovable: boolean (<b>TRUE</b> by default)</li>
+<li><b>@Input()</b> isDismissible: boolean (<b>FALSE</b> by default)</li>
+<li><b>@Input()</b> isReadOnly: boolean (<b>FALSE</b> by default)</li>
+<li><b>@Output()</b> deleteClick: EventEmitter&lt;void&gt;</li>
+<li><b>@Output()</b> doubleClick: EventEmitter&lt;void&gt;</li>
+
+<p>
+    Chip component has two event handlers consumers can use to define behavior when the chip is double-clicked or
+    the dismiss icon is clicked. The component will only render the close icon if the following is true:
+    (isRemovable is TRUE) AND (isDismissible is FALSE AND isReadOnly is FALSE)
+</p>
+
+Also, instead of setting the Chip Component properties programmatically I can set the component up in the template
+and pass the data I want to render it with content projection.
+
+Content Projection Slots
+<li>Items placed in between the opening and closing tag for the ChipComponent will be rendered into the components content.</li>
+
+An example of this is:
+```
+<spt-chip>
+    <div>Projected content will be injected. Any markup and text will be injected into the content space next
+    to label in ChipComponent</div>
+</spt-chip>
+```
