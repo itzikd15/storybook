@@ -1,21 +1,21 @@
 import {NgModule} from '@angular/core';
-import {BadgeComponent} from './badge.component';
+import {TestComponent} from './test.component';
 import {MatIconModule} from '@angular/material/icon';
 import {CommonModule} from '@angular/common';
 
 
 @NgModule({
     declarations: [
-        BadgeComponent
+        TestComponent
     ],
     imports: [
         CommonModule,
         MatIconModule
     ],
     exports: [
-        BadgeComponent
+        TestComponent
     ]
 })
-class BadgeModule {
+class TestModule {
 }
-export {BadgeModule};
+export {TestModule};

@@ -1,69 +1,6 @@
 {
     "pipes": [],
-    "interfaces": [
-        {
-            "name": "Badge",
-            "id": "interface-Badge-0262f3da72c368d68625327eea57b9fa8d7268ff12dfc83c9f2b28c98b63b87a6a9c939430b0487b2fbc9e413717cd76ce0f8c7d79c747418750e814de403f09",
-            "file": "projects/my-lib/src/lib/badge/models/badge.model.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export enum BadgeNames {\n    AWS = 'aws',\n    GCP = 'gcp',\n    AZURE = 'azure',\n    ASSIGNED = 'assigned',\n    NEW = 'new',\n    BETA = 'beta',\n    IDLE = 'idle',\n    PREVIEW = 'preview'\n}\n\nexport enum BadgeTypes {\n    ICON = 'icon',\n    TEXT = 'text'\n}\n\nexport interface Badge {\n    name: BadgeNames;\n    type: BadgeTypes;\n    text?: string;\n    svgIcon?: string;\n}\n",
-            "properties": [
-                {
-                    "name": "name",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "BadgeNames",
-                    "optional": false,
-                    "description": "",
-                    "line": 18
-                },
-                {
-                    "name": "svgIcon",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 21
-                },
-                {
-                    "name": "text",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 20
-                },
-                {
-                    "name": "type",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "BadgeTypes",
-                    "optional": false,
-                    "description": "",
-                    "line": 19
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 165,
-            "methods": []
-        },
-        {
-            "name": "User",
-            "id": "interface-User-9c7e5f1bbbab702cb032307d130876cb68969b0cd4eedef32a0c8cad8081a54e5f8f577ed6ad4539c1b99a1d246cb34031d198c2ea8eba440e64e91b14f01fdc",
-            "file": "stories/User.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export interface User {}\n",
-            "properties": [],
-            "indexSignatures": [],
-            "methods": []
-        }
-    ],
+    "interfaces": [],
     "injectables": [
         {
             "name": "MyLibService",
@@ -92,475 +29,6 @@
     "classes": [],
     "directives": [],
     "components": [
-        {
-            "name": "BadgeComponent",
-            "id": "component-BadgeComponent-a8a11f5c497d2400ccae43b3eedfb5abfa4719ed1f19c091c53c684cf05f410e9d7c634fdc74e5eb0e965695f28953ae2c7aab7ac80f01a7e66835debae7962b",
-            "file": "projects/my-lib/src/lib/badge/badge.component.ts",
-            "changeDetection": "ChangeDetectionStrategy.OnPush",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "spt-badge",
-            "styleUrls": [
-                "./badge.component.scss"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./badge.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "badgeName",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 13,
-                    "type": "BadgeNames | undefined",
-                    "decorators": []
-                },
-                {
-                    "name": "color",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 17,
-                    "type": "BadgeColor | undefined",
-                    "decorators": []
-                },
-                {
-                    "name": "noLeftMargin",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 19,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "noRightMargin",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 21,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "text",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 15,
-                    "type": "string | undefined",
-                    "decorators": []
-                },
-                {
-                    "name": "transparentBackground",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 23,
-                    "type": "boolean",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "badge",
-                    "defaultValue": "{\n        // @ts-ignore\n        name: null,\n        // @ts-ignore\n        type: null\n    }",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Badge",
-                    "optional": false,
-                    "description": "",
-                    "line": 25
-                },
-                {
-                    "name": "badgeClass",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": false,
-                    "description": "",
-                    "line": 34,
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "displayText",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string | undefined",
-                    "optional": false,
-                    "description": "",
-                    "line": 32,
-                    "modifierKind": [
-                        123
-                    ]
-                },
-                {
-                    "name": "hasLeftMargin",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean | undefined",
-                    "optional": false,
-                    "description": "",
-                    "line": 36
-                },
-                {
-                    "name": "hasRightMargin",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "boolean | undefined",
-                    "optional": false,
-                    "description": "",
-                    "line": 38
-                }
-            ],
-            "methodsClass": [
-                {
-                    "name": "initBadge",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 44,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "initCustomBadge",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 90,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 40,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import {ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';\nimport {BadgeList} from './badge-list';\nimport {Badge, BadgeNames} from './models/badge.model';\nimport {BadgeColor} from './models/badge-color.model';\n\n@Component({\n    selector:        'spt-badge',\n    templateUrl:     './badge.component.html',\n    styleUrls:       ['./badge.component.scss'],\n    changeDetection: ChangeDetectionStrategy.OnPush\n})\nclass BadgeComponent implements OnInit {\n    @Input() badgeName: BadgeNames | undefined;\n\n    @Input() text: string | undefined;\n\n    @Input() color: BadgeColor | undefined;\n\n    @Input() noLeftMargin = false;\n\n    @Input() noRightMargin = false;\n\n    @Input() transparentBackground = false;\n\n    badge: Badge = {\n        // @ts-ignore\n        name: null,\n        // @ts-ignore\n        type: null\n    };\n\n    public displayText: string | undefined = '';\n\n    public badgeClass = '';\n\n    hasLeftMargin: boolean | undefined;\n\n    hasRightMargin: boolean | undefined;\n\n    ngOnInit(): void {\n        this.initBadge();\n    }\n\n    initBadge(): void {\n        const badge = BadgeList.find(badge => badge.name === this.badgeName);\n\n        if(badge != null) {\n            this.badge = badge;\n            this.displayText = this.badge.text;\n\n            switch (badge.name) {\n                case BadgeNames.ASSIGNED: {\n                    this.badgeClass = BadgeColor.GREEN;\n                    break;\n                }\n\n                case BadgeNames.NEW: {\n                    this.badgeClass = BadgeColor.BLUE;\n                    break;\n                }\n\n                case BadgeNames.IDLE: {\n                    this.badgeClass = BadgeColor.ORANGE;\n                    break;\n                }\n\n                case BadgeNames.BETA: {\n                    this.badgeClass = BadgeColor.VIOLET;\n                    break;\n                }\n\n                case BadgeNames.PREVIEW: {\n                    this.badgeClass = BadgeColor.BLUE;\n                    break;\n                }\n\n                default: {\n                    this.badgeClass = '';\n                    break;\n                }\n            }\n        }\n\n        this.initCustomBadge();\n\n        this.hasLeftMargin = this.noLeftMargin === false;\n        this.hasRightMargin = this.noRightMargin === false;\n    }\n\n    initCustomBadge(): void {\n        if(this.text != null) {\n            this.displayText = `${this.displayText}${this.text}`;\n        }\n\n        if(this.color != null) {\n            this.badgeClass = this.color;\n        }\n    }\n}\n\nexport {BadgeComponent};\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "@import '../styles/vars';\n\n.has-left-margin-true {\n    margin-left: 8px;\n}\n\n.has-right-margin-true {\n    margin-right: 8px;\n}\n\n.icon-badge, .text-badge{\n    display: flex;\n    justify-content: center;\n    align-items: center;\n}\n\n.icon-badge {\n    height: 24px;\n    width: 36px;\n}\n\n.icon-badge.transparent-background-false {\n    border-radius: 20px;\n    background-color: $spt-blue-00;\n}\n\n.text-badge {\n    border-radius: 2px;\n    height: 16px;\n    padding-left: 4px;\n    padding-right: 4px;\n    color: $spt-base-white;\n    font-size: 12px;\n    font-family: Assistant, sans-serif;\n    font-weight: 600;\n    line-height: 16px;\n    text-transform: uppercase;\n}\n\n.green {\n    background-color: $spt-green-400;\n}\n\n.blue {\n    background-color: $spt-blue-400;\n}\n\n.violet {\n    background-color: $spt-violet-400;\n}\n\n.orange {\n    background-color: $spt-orange-400;\n}\n\n.red {\n    background-color: $spt-red-400;\n}\n",
-                    "styleUrl": "./badge.component.scss"
-                }
-            ],
-            "stylesData": "",
-            "implements": [
-                "OnInit"
-            ],
-            "templateData": "<div class=\"has-left-margin-{{hasLeftMargin}} has-right-margin-{{hasRightMargin}}\">\n    <div *ngIf=\"badge.type==='icon'\" class=\"icon-badge  transparent-background-{{transparentBackground}}\">\n        <mat-icon svgIcon=\"{{badge.svgIcon}}\" class=\"spt-icon-size-l\"></mat-icon>\n    </div>\n    <div *ngIf=\"badge.type==='text' || text != null\" class=\"text-badge {{badgeClass}}\">\n        {{displayText}}\n    </div>\n</div>\n"
-        },
-        {
-            "name": "ButtonComponent",
-            "id": "component-ButtonComponent-4ef205c97a334c309aa4001c8ab4a6d9571dcae18d0e85aaf0d367467ab5d3a9f13ab3573726f1fcb409bc9b49894dadfb80b1bbe1b6ba7041455ad9d4922004",
-            "file": "stories/button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-button",
-            "styleUrls": [
-                "./button.css"
-            ],
-            "styles": [],
-            "template": "<button   type=\"button\"\n   (click)=\"onClick.emit($event)\"\n   [ngClass]=\"classes\"\n   [ngStyle]=\"{ 'background-color': backgroundColor }\"\n >\n   {{ label }}\n </button>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "backgroundColor",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nWhat background color to use\n",
-                    "description": "<p>What background color to use</p>\n",
-                    "line": 26,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "label",
-                    "defaultValue": "'Button'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "pos": 711,
-                            "end": 724,
-                            "flags": 4227072,
-                            "modifierFlagsCache": 0,
-                            "transformFlags": 0,
-                            "kind": 325,
-                            "tagName": {
-                                "pos": 712,
-                                "end": 720,
-                                "flags": 4227072,
-                                "modifierFlagsCache": 0,
-                                "transformFlags": 0,
-                                "kind": 79,
-                                "escapedText": "required"
-                            },
-                            "comment": ""
-                        }
-                    ],
-                    "rawdescription": "\n\nButton contents\n\n",
-                    "description": "<p>Button contents</p>\n",
-                    "line": 40,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "primary",
-                    "defaultValue": "false",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nIs this the principal call to action on the page?\n",
-                    "description": "<p>Is this the principal call to action on the page?</p>\n",
-                    "line": 20,
-                    "type": "boolean",
-                    "decorators": []
-                },
-                {
-                    "name": "size",
-                    "defaultValue": "'medium'",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nHow large should the button be?\n",
-                    "description": "<p>How large should the button be?</p>\n",
-                    "line": 32,
-                    "type": "\"small\" | \"medium\" | \"large\"",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onClick",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nOptional click handler\n",
-                    "description": "<p>Optional click handler</p>\n",
-                    "line": 46,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'storybook-button',\n  template: ` <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    {{ label }}\n  </button>`,\n  styleUrls: ['./button.css'],\n})\nexport default class ButtonComponent {\n  /**\n   * Is this the principal call to action on the page?\n   */\n  @Input()\n  primary = false;\n\n  /**\n   * What background color to use\n   */\n  @Input()\n  backgroundColor?: string;\n\n  /**\n   * How large should the button be?\n   */\n  @Input()\n  size: 'small' | 'medium' | 'large' = 'medium';\n\n  /**\n   * Button contents\n   *\n   * @required\n   */\n  @Input()\n  label = 'Button';\n\n  /**\n   * Optional click handler\n   */\n  @Output()\n  onClick = new EventEmitter<Event>();\n\n  public get classes(): string[] {\n    const mode = this.primary ? 'storybook-button--primary' : 'storybook-button--secondary';\n\n    return ['storybook-button', `storybook-button--${this.size}`, mode];\n  }\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".storybook-button {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-weight: 700;\n  border: 0;\n  border-radius: 3em;\n  cursor: pointer;\n  display: inline-block;\n  line-height: 1;\n}\n.storybook-button--primary {\n  color: white;\n  background-color: #1ea7fd;\n}\n.storybook-button--secondary {\n  color: #333;\n  background-color: transparent;\n  box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;\n}\n.storybook-button--small {\n  font-size: 12px;\n  padding: 10px 16px;\n}\n.storybook-button--medium {\n  font-size: 14px;\n  padding: 11px 20px;\n}\n.storybook-button--large {\n  font-size: 16px;\n  padding: 12px 24px;\n}\n",
-                    "styleUrl": "./button.css"
-                }
-            ],
-            "stylesData": "",
-            "accessors": {
-                "classes": {
-                    "name": "classes",
-                    "getSignature": {
-                        "name": "classes",
-                        "type": "[]",
-                        "returnType": "string[]",
-                        "line": 48
-                    }
-                }
-            }
-        },
-        {
-            "name": "ButtonComponent",
-            "id": "component-ButtonComponent-212cde11376e8e3a27f942ed77efae135882012e64cb1c494d71520f822a1b5da0ec12bb90b911cfb8a5d7047ace7b1900d05f05338463ed7ca75704fa059600-1",
-            "file": "projects/my-lib/src/lib/button/button.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "my-button",
-            "styleUrls": [
-                "./button.component.css"
-            ],
-            "styles": [],
-            "templateUrl": [
-                "./button.component.html"
-            ],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "text",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 10,
-                    "type": "string | undefined",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "click",
-                    "defaultValue": "new EventEmitter()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 11,
-                    "type": "EventEmitter<void>"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "onclick",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 18,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                }
-            ],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';\n\n@Component({\n  selector: 'my-button',\n  templateUrl: './button.component.html',\n  styleUrls: ['./button.component.css']\n})\nexport class ButtonComponent {\n\n    @Input() text: string | undefined;\n    @Output() click: EventEmitter<void> = new EventEmitter();\n\n    constructor() { }\n\n    ngOnInit() {\n    }\n\n    onclick(){\n        this.click.emit();\n    }\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": "",
-                    "styleUrl": "./button.component.css"
-                }
-            ],
-            "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [],
-                "line": 11
-            },
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "ButtonComponent-1",
-            "templateData": "<button (click)=\"onclick()\">\n  {{text}}\n</button>"
-        },
-        {
-            "name": "HeaderComponent",
-            "id": "component-HeaderComponent-a557eec14f72c438a8033301f4d6ce023e0a1844a3b06ec2b38794a612acc31735ae78a5ee10071b230c8c20d699eb914554e69d07ade54adb371da8efb464cc",
-            "file": "stories/header.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "storybook-header",
-            "styleUrls": [
-                "./header.css"
-            ],
-            "styles": [],
-            "template": "<header>    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>",
-            "templateUrl": [],
-            "viewProviders": [],
-            "inputsClass": [
-                {
-                    "name": "user",
-                    "defaultValue": "null",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 65,
-                    "type": "User | null",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [
-                {
-                    "name": "onCreateAccount",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 74,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogin",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 68,
-                    "type": "EventEmitter"
-                },
-                {
-                    "name": "onLogout",
-                    "defaultValue": "new EventEmitter<Event>()",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 71,
-                    "type": "EventEmitter"
-                }
-            ],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-header',\n  template: `<header>\n    <div class=\"wrapper\">\n      <div>\n        <svg width=\"32\" height=\"32\" viewBox=\"0 0 32 32\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M10 0h12a10 10 0 0110 10v12a10 10 0 01-10 10H10A10 10 0 010 22V10A10 10 0 0110 0z\"\n              fill=\"#FFF\"\n            />\n            <path\n              d=\"M5.3 10.6l10.4 6v11.1l-10.4-6v-11zm11.4-6.2l9.7 5.5-9.7 5.6V4.4z\"\n              fill=\"#555AB9\"\n            />\n            <path\n              d=\"M27.2 10.6v11.2l-10.5 6V16.5l10.5-6zM15.7 4.4v11L6 10l9.7-5.5z\"\n              fill=\"#91BAF8\"\n            />\n          </g>\n        </svg>\n        <h1>Acme</h1>\n      </div>\n      <div>\n        <div *ngIf=\"user\">\n          <span class=\"welcome\">\n            Welcome, <b>{{ user.name }}</b\n            >!\n          </span>\n          <storybook-button\n            *ngIf=\"user\"\n            size=\"small\"\n            (onClick)=\"onLogout.emit($event)\"\n            label=\"Log out\"\n          ></storybook-button>\n        </div>\n        <div *ngIf=\"!user\">\n          <storybook-button\n            *ngIf=\"!user\"\n            size=\"small\"\n            class=\"margin-left\"\n            (onClick)=\"onLogin.emit($event)\"\n            label=\"Log in\"\n          ></storybook-button>\n          <storybook-button\n            *ngIf=\"!user\"\n            primary\n            size=\"small\"\n            primary=\"true\"\n            class=\"margin-left\"\n            (onClick)=\"onCreateAccount.emit($event)\"\n            label=\"Sign up\"\n          ></storybook-button>\n        </div>\n      </div>\n    </div>\n  </header>`,\n  styleUrls: ['./header.css'],\n})\nexport default class HeaderComponent {\n  @Input()\n  user: User | null = null;\n\n  @Output()\n  onLogin = new EventEmitter<Event>();\n\n  @Output()\n  onLogout = new EventEmitter<Event>();\n\n  @Output()\n  onCreateAccount = new EventEmitter<Event>();\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": [
-                {
-                    "data": ".wrapper {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  border-bottom: 1px solid rgba(0, 0, 0, 0.1);\n  padding: 15px 20px;\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\nsvg {\n  display: inline-block;\n  vertical-align: top;\n}\n\nh1 {\n  font-weight: 900;\n  font-size: 20px;\n  line-height: 1;\n  margin: 6px 0 6px 10px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nbutton + button {\n  margin-left: 10px;\n}\n\n.welcome {\n  color: #333;\n  font-size: 14px;\n  margin-right: 10px;\n}\n",
-                    "styleUrl": "./header.css"
-                }
-            ],
-            "stylesData": ""
-        },
         {
             "name": "MyLibComponent",
             "id": "component-MyLibComponent-fd3379c8b86be78a8c856fb6f0cd9a1ff51dc154f4a6584bac52e3940ea54c1be578efbb9807129e697fe2332985e7c9323efc1094e1af92b0903ed2d9a702a2",
@@ -593,64 +61,66 @@
             "stylesData": ""
         },
         {
-            "name": "PageComponent",
-            "id": "component-PageComponent-7126d8c2607c946741c651482413b43feb72b2d63cac9d3ac173fde206a5e635eb4cdbf7ca7ac9327c7d4d05cf7ef619144c34c11609ad677081d0ee4e855064",
-            "file": "stories/page.component.ts",
+            "name": "TestComponent",
+            "id": "component-TestComponent-21d01286793e19c6236831b58134fb44fd195feb0659f5a61e8b96b38cf54bbf5d311e0f07319c3382213b400abc0023c7dc1c4abc4f6bc9ffd57f4e9f3ecc7a",
+            "file": "projects/my-lib/src/lib/test/test.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "storybook-page",
+            "selector": "test",
             "styleUrls": [
-                "./page.css"
+                "./test.component.scss"
             ],
             "styles": [],
-            "template": "<article>    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>",
-            "templateUrl": [],
+            "templateUrl": [
+                "./test.component.html"
+            ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "text1InputMode",
+                    "defaultValue": "'need to update'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 10,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [
                 {
-                    "name": "user",
-                    "defaultValue": "null",
+                    "name": "text2NoInputMode",
+                    "defaultValue": "'need to update'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "User | null",
+                    "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 64
+                    "line": 11
                 }
             ],
             "methodsClass": [
                 {
-                    "name": "doCreateAccount",
+                    "name": "initBadge",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 74,
+                    "line": 17,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
                 {
-                    "name": "doLogin",
+                    "name": "ngOnChanges",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 70,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "doLogout",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 66,
+                    "line": 13,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -662,27 +132,31 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { User } from './User';\n\n@Component({\n  selector: 'storybook-page',\n  template: `<article>\n    <storybook-header\n      [user]=\"user\"\n      (onLogout)=\"doLogout()\"\n      (onLogin)=\"doLogin()\"\n      (onCreateAccount)=\"doCreateAccount()\"\n    ></storybook-header>\n    <section>\n      <h2>Pages in Storybook</h2>\n      <p>\n        We recommend building UIs with a\n        <a href=\"https://componentdriven.org\" target=\"_blank\" rel=\"noopener noreferrer\">\n          <strong>component-driven</strong>\n        </a>\n        process starting with atomic components and ending with pages.\n      </p>\n      <p>\n        Render pages with mock data. This makes it easy to build and review page states without\n        needing to navigate to them in your app. Here are some handy patterns for managing page data\n        in Storybook:\n      </p>\n      <ul>\n        <li>\n          Use a higher-level connected component. Storybook helps you compose such data from the\n          \"args\" of child component stories\n        </li>\n        <li>\n          Assemble data in the page component from your services. You can mock these services out\n          using Storybook.\n        </li>\n      </ul>\n      <p>\n        Get a guided tutorial on component-driven development at\n        <a href=\"https://storybook.js.org/tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">\n          Storybook tutorials\n        </a>\n        . Read more in the\n        <a href=\"https://storybook.js.org/docs\" target=\"_blank\" rel=\"noopener noreferrer\"> docs </a>\n        .\n      </p>\n      <div class=\"tip-wrapper\">\n        <span class=\"tip\">Tip</span> Adjust the width of the canvas with the\n        <svg width=\"10\" height=\"10\" viewBox=\"0 0 12 12\" xmlns=\"http://www.w3.org/2000/svg\">\n          <g fill=\"none\" fillRule=\"evenodd\">\n            <path\n              d=\"M1.5 5.2h4.8c.3 0 .5.2.5.4v5.1c-.1.2-.3.3-.4.3H1.4a.5.5 0 01-.5-.4V5.7c0-.3.2-.5.5-.5zm0-2.1h6.9c.3 0 .5.2.5.4v7a.5.5 0 01-1 0V4H1.5a.5.5 0 010-1zm0-2.1h9c.3 0 .5.2.5.4v9.1a.5.5 0 01-1 0V2H1.5a.5.5 0 010-1zm4.3 5.2H2V10h3.8V6.2z\"\n              id=\"a\"\n              fill=\"#999\"\n            />\n          </g>\n        </svg>\n        Viewports addon in the toolbar\n      </div>\n    </section>\n  </article>`,\n  styleUrls: ['./page.css'],\n})\nexport default class PageComponent {\n  user: User | null = null;\n\n  doLogout() {\n    this.user = null;\n  }\n\n  doLogin() {\n    this.user = { name: 'Jane Doe' };\n  }\n\n  doCreateAccount() {\n    this.user = { name: 'Jane Doe' };\n  }\n}\n",
+            "sourceCode": "import {ChangeDetectionStrategy, Component, Input, OnChanges} from '@angular/core';\n\n@Component({\n    selector:        'test',\n    templateUrl:     './test.component.html',\n    styleUrls:       ['./test.component.scss'],\n    changeDetection: ChangeDetectionStrategy.OnPush\n})\nclass TestComponent implements OnChanges {\n    @Input() text1InputMode = 'need to update'\n    text2NoInputMode = 'need to update'\n\n    ngOnChanges(): void {\n        this.initBadge();\n    }\n\n    initBadge(): void {\n        this.text1InputMode =\"Updated\"\n        this.text1InputMode =\"Updated\"\n    }\n}\n\nexport {TestComponent};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "section {\n  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  line-height: 24px;\n  padding: 48px 20px;\n  margin: 0 auto;\n  max-width: 600px;\n  color: #333;\n}\n\nsection h2 {\n  font-weight: 900;\n  font-size: 32px;\n  line-height: 1;\n  margin: 0 0 4px;\n  display: inline-block;\n  vertical-align: top;\n}\n\nsection p {\n  margin: 1em 0;\n}\n\nsection a {\n  text-decoration: none;\n  color: #1ea7fd;\n}\n\nsection ul {\n  padding-left: 30px;\n  margin: 1em 0;\n}\n\nsection li {\n  margin-bottom: 8px;\n}\n\nsection .tip {\n  display: inline-block;\n  border-radius: 1em;\n  font-size: 11px;\n  line-height: 12px;\n  font-weight: 700;\n  background: #e7fdd8;\n  color: #66bf3c;\n  padding: 4px 12px;\n  margin-right: 10px;\n  vertical-align: top;\n}\n\nsection .tip-wrapper {\n  font-size: 13px;\n  line-height: 20px;\n  margin-top: 40px;\n  margin-bottom: 40px;\n}\n\nsection .tip-wrapper svg {\n  display: inline-block;\n  height: 12px;\n  width: 12px;\n  margin-right: 4px;\n  vertical-align: top;\n  margin-top: 3px;\n}\n\nsection .tip-wrapper svg path {\n  fill: #1ea7fd;\n}\n",
-                    "styleUrl": "./page.css"
+                    "data": "",
+                    "styleUrl": "./test.component.scss"
                 }
             ],
-            "stylesData": ""
+            "stylesData": "",
+            "implements": [
+                "OnChanges"
+            ],
+            "templateData": "  <div>\n    input mode: {{text1InputMode}}\n  </div>\n  <div>\n    not input mode: {{text2NoInputMode}}\n  </div>\n"
         }
     ],
     "modules": [
         {
-            "name": "BadgeModule",
-            "id": "module-BadgeModule-0315751f89c2d3d0c897e731acdbe8ff74f8f52c175bcccef61ef7ac1139794fe403cc89b830f9095b5295d8c1d633a3f2361a30eeec237c539f80b627fd0626",
+            "name": "MyLibModule",
+            "id": "module-MyLibModule-23565f465eaecb0a95ba8ea47dccb201d13355012ae24bee58735c0bccee667b3ee02412b8806a38f81908105ae194bf596b6852a4f0eb0900c85da0f3c24958",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/my-lib/src/lib/badge/badge.module.ts",
+            "file": "projects/my-lib/src/lib/my-lib.module.ts",
             "methods": [],
-            "sourceCode": "import {NgModule} from '@angular/core';\nimport {BadgeComponent} from './badge.component';\nimport {MatIconModule} from '@angular/material/icon';\nimport {CommonModule} from '@angular/common';\n\n\n@NgModule({\n    declarations: [\n        BadgeComponent\n    ],\n    imports: [\n        CommonModule,\n        MatIconModule\n    ],\n    exports: [\n        BadgeComponent\n    ]\n})\nclass BadgeModule {\n}\nexport {BadgeModule};\n",
+            "sourceCode": "import { NgModule } from '@angular/core';\nimport { MyLibComponent } from './my-lib.component';\n\n\n\n@NgModule({\n  declarations: [\n    MyLibComponent,\n  ],\n  imports: [\n  ],\n  exports: [\n    MyLibComponent\n  ]\n})\nexport class MyLibModule { }\n",
             "children": [
                 {
                     "type": "providers",
@@ -692,7 +166,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "BadgeComponent"
+                            "name": "MyLibComponent"
                         }
                     ]
                 },
@@ -704,7 +178,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "BadgeComponent"
+                            "name": "MyLibComponent"
                         }
                     ]
                 },
@@ -719,14 +193,14 @@
             ]
         },
         {
-            "name": "MyLibModule",
-            "id": "module-MyLibModule-c3681b99d54b9369b6bbe1ef294fe7acd842ac7ddb88126f6db3901338a2a94e0b1b32ab299c8822a4f6068799a9ad54979ba2822e38c67392ab956ac92d8a33",
+            "name": "TestModule",
+            "id": "module-TestModule-e15066ba2e3052f365c5cc4134d6f2f0f30455e96fb17e9acfa7b5759db2fb0901737cf6f192c4ac903a8c13481f41db46f7c7e1b09bad38465392b165eff4a4",
             "description": "",
             "deprecationMessage": "",
             "deprecated": false,
-            "file": "projects/my-lib/src/lib/my-lib.module.ts",
+            "file": "projects/my-lib/src/lib/test/test.module.ts",
             "methods": [],
-            "sourceCode": "import { NgModule } from '@angular/core';\nimport { MyLibComponent } from './my-lib.component';\nimport { ButtonComponent } from './button/button.component';\n\n\n\n@NgModule({\n  declarations: [\n    MyLibComponent,\n    ButtonComponent\n  ],\n  imports: [\n  ],\n  exports: [\n    MyLibComponent\n  ]\n})\nexport class MyLibModule { }\n",
+            "sourceCode": "import {NgModule} from '@angular/core';\nimport {TestComponent} from './test.component';\nimport {MatIconModule} from '@angular/material/icon';\nimport {CommonModule} from '@angular/common';\n\n\n@NgModule({\n    declarations: [\n        TestComponent\n    ],\n    imports: [\n        CommonModule,\n        MatIconModule\n    ],\n    exports: [\n        TestComponent\n    ]\n})\nclass TestModule {\n}\nexport {TestModule};\n",
             "children": [
                 {
                     "type": "providers",
@@ -736,10 +210,7 @@
                     "type": "declarations",
                     "elements": [
                         {
-                            "name": "ButtonComponent"
-                        },
-                        {
-                            "name": "MyLibComponent"
+                            "name": "TestComponent"
                         }
                     ]
                 },
@@ -751,7 +222,7 @@
                     "type": "exports",
                     "elements": [
                         {
-                            "name": "MyLibComponent"
+                            "name": "TestComponent"
                         }
                     ]
                 },
@@ -769,1011 +240,66 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "BADGE_NAME_STORY",
+                "name": "test",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
+                "file": "projects/my-lib/src/lib/test/test.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "TEST_STORY.bind({})"
+            },
+            {
+                "name": "TEST_STORY",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/my-lib/src/lib/test/test.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "(args) => ({\n    props:    {\n        ...args\n    },\n    template: `\n<spt-badge [badgeName]=\"badgeName\" [transparentBackground]=\"transparentBackground\" >\n</spt-badge>\n`\n})",
+                "defaultValue": "(args) => ({\n    props:    {\n        ...args\n    },\n    template: `\n<test>\n</test>\n`\n})",
                 "rawdescription": "Setting the template on the Story<Component> object and then passing the 'props' object allows for dynamic input\ncontrols via the argsTable when interacting with the component.",
                 "description": "<p>Setting the template on the Story<Component> object and then passing the &#39;props&#39; object allows for dynamic input\ncontrols via the argsTable when interacting with the component.</p>\n"
-            },
-            {
-                "name": "BadgeList",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/my-lib/src/lib/badge/badge-list.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Badge[]",
-                "defaultValue": "[\n    {\n        name:    BadgeNames.AWS,\n        type:    BadgeTypes.ICON,\n        svgIcon: 'aws'\n    },\n    {\n        name:    BadgeNames.AZURE,\n        type:    BadgeTypes.ICON,\n        svgIcon: 'azure'\n    },\n    {\n        name:    BadgeNames.GCP,\n        type:    BadgeTypes.ICON,\n        svgIcon: 'gcp'\n    },\n    {\n        name: BadgeNames.ASSIGNED,\n        type: BadgeTypes.TEXT,\n        text: 'assigned'\n    },\n    {\n        name: BadgeNames.NEW,\n        type: BadgeTypes.TEXT,\n        text: 'new'\n    },\n    {\n        name: BadgeNames.BETA,\n        type: BadgeTypes.TEXT,\n        text: 'beta'\n    },\n    {\n        name: BadgeNames.IDLE,\n        type: BadgeTypes.TEXT,\n        text: 'idle'\n    },\n    {\n        name: BadgeNames.PREVIEW,\n        type: BadgeTypes.TEXT,\n        text: 'preview'\n    }\n]"
-            },
-            {
-                "name": "badgesWithCustomText",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "customTextBadgeTemplate.bind({})"
-            },
-            {
-                "name": "badgesWithLabel",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "labelBadgeTemplate.bind({})"
-            },
-            {
-                "name": "BANNER_PROPS_STORY",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/my-lib/src/lib/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<ButtonComponent>",
-                "defaultValue": "(args) => ({\n    props: args\n})",
-                "rawdescription": "Note that Template.bind({}) is a standard JavaScript technique for making a copy of a function.\nWe copy the Template so each exported story can set its own properties on it.\n\nWhen a story is written like the 'Template' example below we are using the Args (@Inputs) to set the API for the\ncomponent. The 'typedBanner' story is an example of how we can set the components properties through the args object",
-                "description": "<p>Note that Template.bind({}) is a standard JavaScript technique for making a copy of a function.\nWe copy the Template so each exported story can set its own properties on it.</p>\n<p>When a story is written like the &#39;Template&#39; example below we are using the Args (@Inputs) to set the API for the\ncomponent. The &#39;typedBanner&#39; story is an example of how we can set the components properties through the args object</p>\n"
-            },
-            {
-                "name": "customTextBadgeTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<BadgeComponent>",
-                "defaultValue": "(args) => ({\n    props:    args,\n    template: `\n<div style=\"width:100px;\">\n<spt-badge [text]=\"text\" [color]=\"color\" >\n</spt-badge>\n</div>\n`\n})"
-            },
-            {
-                "name": "iconBadge",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "BADGE_NAME_STORY.bind({})"
-            },
-            {
-                "name": "labelBadgeTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "(args) => ({\n    props:    {\n        ...args\n    },\n    template: `\n<div style=\"max-width:50px;\">\n<spt-badge [badgeName]=\"badgeName\" >\n</spt-badge>\n</div>\n`\n})"
-            },
-            {
-                "name": "Large",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedIn",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "LoggedOut",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Small",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Button>",
-                "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Header.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Header>",
-                "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "stories/Page.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story<Page>",
-                "defaultValue": "(args: Page) => ({\n  props: args,\n})"
-            },
-            {
-                "name": "typedBanner",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/my-lib/src/lib/button/button.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "",
-                "defaultValue": "BANNER_PROPS_STORY.bind({})"
             }
         ],
         "functions": [],
         "typealiases": [],
-        "enumerations": [
-            {
-                "name": "BadgeColor",
-                "childs": [
-                    {
-                        "name": "ORANGE",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "orange"
-                    },
-                    {
-                        "name": "BLUE",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "blue"
-                    },
-                    {
-                        "name": "VIOLET",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "violet"
-                    },
-                    {
-                        "name": "GREEN",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "green"
-                    },
-                    {
-                        "name": "RED",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "red"
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "projects/my-lib/src/lib/badge/badge.stories.ts"
-            },
-            {
-                "name": "BadgeColor",
-                "childs": [
-                    {
-                        "name": "ORANGE",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "orange"
-                    },
-                    {
-                        "name": "BLUE",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "blue"
-                    },
-                    {
-                        "name": "VIOLET",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "violet"
-                    },
-                    {
-                        "name": "GREEN",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "green"
-                    },
-                    {
-                        "name": "RED",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "red"
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "projects/my-lib/src/lib/badge/models/badge-color.model.ts"
-            },
-            {
-                "name": "BadgeNames",
-                "childs": [
-                    {
-                        "name": "AWS",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "aws"
-                    },
-                    {
-                        "name": "GCP",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "gcp"
-                    },
-                    {
-                        "name": "AZURE",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "azure"
-                    },
-                    {
-                        "name": "ASSIGNED",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "assigned"
-                    },
-                    {
-                        "name": "NEW",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "new"
-                    },
-                    {
-                        "name": "BETA",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "beta"
-                    },
-                    {
-                        "name": "IDLE",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "idle"
-                    },
-                    {
-                        "name": "PREVIEW",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "preview"
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "projects/my-lib/src/lib/badge/badge.stories.ts"
-            },
-            {
-                "name": "BadgeNames",
-                "childs": [
-                    {
-                        "name": "AWS",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "aws"
-                    },
-                    {
-                        "name": "GCP",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "gcp"
-                    },
-                    {
-                        "name": "AZURE",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "azure"
-                    },
-                    {
-                        "name": "ASSIGNED",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "assigned"
-                    },
-                    {
-                        "name": "NEW",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "new"
-                    },
-                    {
-                        "name": "BETA",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "beta"
-                    },
-                    {
-                        "name": "IDLE",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "idle"
-                    },
-                    {
-                        "name": "PREVIEW",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "preview"
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "projects/my-lib/src/lib/badge/models/badge.model.ts"
-            },
-            {
-                "name": "BadgeTypes",
-                "childs": [
-                    {
-                        "name": "ICON",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "icon"
-                    },
-                    {
-                        "name": "TEXT",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "value": "text"
-                    }
-                ],
-                "ctype": "miscellaneous",
-                "subtype": "enum",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "file": "projects/my-lib/src/lib/badge/models/badge.model.ts"
-            }
-        ],
+        "enumerations": [],
         "groupedVariables": {
-            "projects/my-lib/src/lib/badge/badge.stories.ts": [
+            "projects/my-lib/src/lib/test/test.stories.ts": [
                 {
-                    "name": "BADGE_NAME_STORY",
+                    "name": "test",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
+                    "file": "projects/my-lib/src/lib/test/test.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "TEST_STORY.bind({})"
+                },
+                {
+                    "name": "TEST_STORY",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/my-lib/src/lib/test/test.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "(args) => ({\n    props:    {\n        ...args\n    },\n    template: `\n<spt-badge [badgeName]=\"badgeName\" [transparentBackground]=\"transparentBackground\" >\n</spt-badge>\n`\n})",
+                    "defaultValue": "(args) => ({\n    props:    {\n        ...args\n    },\n    template: `\n<test>\n</test>\n`\n})",
                     "rawdescription": "Setting the template on the Story<Component> object and then passing the 'props' object allows for dynamic input\ncontrols via the argsTable when interacting with the component.",
                     "description": "<p>Setting the template on the Story<Component> object and then passing the &#39;props&#39; object allows for dynamic input\ncontrols via the argsTable when interacting with the component.</p>\n"
-                },
-                {
-                    "name": "badgesWithCustomText",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "customTextBadgeTemplate.bind({})"
-                },
-                {
-                    "name": "badgesWithLabel",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "labelBadgeTemplate.bind({})"
-                },
-                {
-                    "name": "customTextBadgeTemplate",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<BadgeComponent>",
-                    "defaultValue": "(args) => ({\n    props:    args,\n    template: `\n<div style=\"width:100px;\">\n<spt-badge [text]=\"text\" [color]=\"color\" >\n</spt-badge>\n</div>\n`\n})"
-                },
-                {
-                    "name": "iconBadge",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "BADGE_NAME_STORY.bind({})"
-                },
-                {
-                    "name": "labelBadgeTemplate",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "(args) => ({\n    props:    {\n        ...args\n    },\n    template: `\n<div style=\"max-width:50px;\">\n<spt-badge [badgeName]=\"badgeName\" >\n</spt-badge>\n</div>\n`\n})"
-                }
-            ],
-            "projects/my-lib/src/lib/badge/badge-list.ts": [
-                {
-                    "name": "BadgeList",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/my-lib/src/lib/badge/badge-list.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Badge[]",
-                    "defaultValue": "[\n    {\n        name:    BadgeNames.AWS,\n        type:    BadgeTypes.ICON,\n        svgIcon: 'aws'\n    },\n    {\n        name:    BadgeNames.AZURE,\n        type:    BadgeTypes.ICON,\n        svgIcon: 'azure'\n    },\n    {\n        name:    BadgeNames.GCP,\n        type:    BadgeTypes.ICON,\n        svgIcon: 'gcp'\n    },\n    {\n        name: BadgeNames.ASSIGNED,\n        type: BadgeTypes.TEXT,\n        text: 'assigned'\n    },\n    {\n        name: BadgeNames.NEW,\n        type: BadgeTypes.TEXT,\n        text: 'new'\n    },\n    {\n        name: BadgeNames.BETA,\n        type: BadgeTypes.TEXT,\n        text: 'beta'\n    },\n    {\n        name: BadgeNames.IDLE,\n        type: BadgeTypes.TEXT,\n        text: 'idle'\n    },\n    {\n        name: BadgeNames.PREVIEW,\n        type: BadgeTypes.TEXT,\n        text: 'preview'\n    }\n]"
-                }
-            ],
-            "projects/my-lib/src/lib/button/button.stories.ts": [
-                {
-                    "name": "BANNER_PROPS_STORY",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/my-lib/src/lib/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<ButtonComponent>",
-                    "defaultValue": "(args) => ({\n    props: args\n})",
-                    "rawdescription": "Note that Template.bind({}) is a standard JavaScript technique for making a copy of a function.\nWe copy the Template so each exported story can set its own properties on it.\n\nWhen a story is written like the 'Template' example below we are using the Args (@Inputs) to set the API for the\ncomponent. The 'typedBanner' story is an example of how we can set the components properties through the args object",
-                    "description": "<p>Note that Template.bind({}) is a standard JavaScript technique for making a copy of a function.\nWe copy the Template so each exported story can set its own properties on it.</p>\n<p>When a story is written like the &#39;Template&#39; example below we are using the Args (@Inputs) to set the API for the\ncomponent. The &#39;typedBanner&#39; story is an example of how we can set the components properties through the args object</p>\n"
-                },
-                {
-                    "name": "typedBanner",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/my-lib/src/lib/button/button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "BANNER_PROPS_STORY.bind({})"
-                }
-            ],
-            "stories/Button.stories.ts": [
-                {
-                    "name": "Large",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Small",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Button.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Button>",
-                    "defaultValue": "(args: Button) => ({\n  props: args,\n})"
-                }
-            ],
-            "stories/Header.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Header.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Header>",
-                    "defaultValue": "(args: Header) => ({\n  props: args,\n})"
-                }
-            ],
-            "stories/Page.stories.ts": [
-                {
-                    "name": "LoggedIn",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "LoggedOut",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "",
-                    "defaultValue": "Template.bind({})"
-                },
-                {
-                    "name": "Template",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "stories/Page.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story<Page>",
-                    "defaultValue": "(args: Page) => ({\n  props: args,\n})"
                 }
             ]
         },
         "groupedFunctions": {},
-        "groupedEnumerations": {
-            "projects/my-lib/src/lib/badge/badge.stories.ts": [
-                {
-                    "name": "BadgeColor",
-                    "childs": [
-                        {
-                            "name": "ORANGE",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "orange"
-                        },
-                        {
-                            "name": "BLUE",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "blue"
-                        },
-                        {
-                            "name": "VIOLET",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "violet"
-                        },
-                        {
-                            "name": "GREEN",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "green"
-                        },
-                        {
-                            "name": "RED",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "red"
-                        }
-                    ],
-                    "ctype": "miscellaneous",
-                    "subtype": "enum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "file": "projects/my-lib/src/lib/badge/badge.stories.ts"
-                },
-                {
-                    "name": "BadgeNames",
-                    "childs": [
-                        {
-                            "name": "AWS",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "aws"
-                        },
-                        {
-                            "name": "GCP",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "gcp"
-                        },
-                        {
-                            "name": "AZURE",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "azure"
-                        },
-                        {
-                            "name": "ASSIGNED",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "assigned"
-                        },
-                        {
-                            "name": "NEW",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "new"
-                        },
-                        {
-                            "name": "BETA",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "beta"
-                        },
-                        {
-                            "name": "IDLE",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "idle"
-                        },
-                        {
-                            "name": "PREVIEW",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "preview"
-                        }
-                    ],
-                    "ctype": "miscellaneous",
-                    "subtype": "enum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "file": "projects/my-lib/src/lib/badge/badge.stories.ts"
-                }
-            ],
-            "projects/my-lib/src/lib/badge/models/badge-color.model.ts": [
-                {
-                    "name": "BadgeColor",
-                    "childs": [
-                        {
-                            "name": "ORANGE",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "orange"
-                        },
-                        {
-                            "name": "BLUE",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "blue"
-                        },
-                        {
-                            "name": "VIOLET",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "violet"
-                        },
-                        {
-                            "name": "GREEN",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "green"
-                        },
-                        {
-                            "name": "RED",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "red"
-                        }
-                    ],
-                    "ctype": "miscellaneous",
-                    "subtype": "enum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "file": "projects/my-lib/src/lib/badge/models/badge-color.model.ts"
-                }
-            ],
-            "projects/my-lib/src/lib/badge/models/badge.model.ts": [
-                {
-                    "name": "BadgeNames",
-                    "childs": [
-                        {
-                            "name": "AWS",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "aws"
-                        },
-                        {
-                            "name": "GCP",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "gcp"
-                        },
-                        {
-                            "name": "AZURE",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "azure"
-                        },
-                        {
-                            "name": "ASSIGNED",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "assigned"
-                        },
-                        {
-                            "name": "NEW",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "new"
-                        },
-                        {
-                            "name": "BETA",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "beta"
-                        },
-                        {
-                            "name": "IDLE",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "idle"
-                        },
-                        {
-                            "name": "PREVIEW",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "preview"
-                        }
-                    ],
-                    "ctype": "miscellaneous",
-                    "subtype": "enum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "file": "projects/my-lib/src/lib/badge/models/badge.model.ts"
-                },
-                {
-                    "name": "BadgeTypes",
-                    "childs": [
-                        {
-                            "name": "ICON",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "icon"
-                        },
-                        {
-                            "name": "TEXT",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "value": "text"
-                        }
-                    ],
-                    "ctype": "miscellaneous",
-                    "subtype": "enum",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "file": "projects/my-lib/src/lib/badge/models/badge.model.ts"
-                }
-            ]
-        },
+        "groupedEnumerations": {},
         "groupedTypeAliases": {}
     },
     "routes": [],
     "coverage": {
-        "count": 9,
+        "count": 20,
         "status": "low",
         "files": [
-            {
-                "filePath": "projects/my-lib/src/lib/badge/badge-list.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "BadgeList",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/my-lib/src/lib/badge/badge.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "BadgeComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/15",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "BADGE_NAME_STORY",
-                "coveragePercent": 100,
-                "coverageCount": "1/1",
-                "status": "very-good"
-            },
-            {
-                "filePath": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "badgesWithCustomText",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "badgesWithLabel",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "customTextBadgeTemplate",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "iconBadge",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/my-lib/src/lib/badge/badge.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "labelBadgeTemplate",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/my-lib/src/lib/badge/models/badge.model.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "Badge",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/my-lib/src/lib/button/button.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/6",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/my-lib/src/lib/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "BANNER_PROPS_STORY",
-                "coveragePercent": 100,
-                "coverageCount": "1/1",
-                "status": "very-good"
-            },
-            {
-                "filePath": "projects/my-lib/src/lib/button/button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "typedBanner",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
             {
                 "filePath": "projects/my-lib/src/lib/my-lib.component.ts",
                 "type": "component",
@@ -1793,150 +319,33 @@
                 "status": "low"
             },
             {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Large",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Small",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Button.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Header.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedIn",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "LoggedOut",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/Page.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Template",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/User.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "User",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/button.component.ts",
+                "filePath": "projects/my-lib/src/lib/test/test.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "ButtonComponent",
-                "coveragePercent": 83,
-                "coverageCount": "5/6",
+                "name": "TestComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/my-lib/src/lib/test/test.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "test",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/my-lib/src/lib/test/test.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TEST_STORY",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
                 "status": "very-good"
-            },
-            {
-                "filePath": "stories/header.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "HeaderComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
-            },
-            {
-                "filePath": "stories/page.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "PageComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/5",
-                "status": "low"
             }
         ]
     }

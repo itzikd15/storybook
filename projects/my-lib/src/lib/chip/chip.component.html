@@ -1,9 +1,0 @@
-<div class="spt-chip" [class.disabled]="isDisabled === true" [class.readOnly]="isReadOnly === true" fxLayout="row"
-     fxLayoutAlign="center center" (dblclick)="onDoubleClick()">
-  <span class="label" *ngIf="label">
-    {{label}}:
-  </span>
-  <ng-content></ng-content>
-  <mat-icon *ngIf="isRemovable && isDisabled !== true && isReadOnly !== true"
-            class="close-icon spt-icon-size-l clickable" (click)="onClick($event)" svgIcon="close"></mat-icon>
-</div>
