@@ -62,7 +62,7 @@
         },
         {
             "name": "TestComponent",
-            "id": "component-TestComponent-21d01286793e19c6236831b58134fb44fd195feb0659f5a61e8b96b38cf54bbf5d311e0f07319c3382213b400abc0023c7dc1c4abc4f6bc9ffd57f4e9f3ecc7a",
+            "id": "component-TestComponent-06787bf65715aba8b7836b5468b982865ccb249466bb941284d37ea735f3d5fb760e6a39eb55eb41a0592b3cbffca47c40e14bc86b8da11dcdf40c701389ff69",
             "file": "projects/my-lib/src/lib/test/test.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -94,10 +94,10 @@
             "propertiesClass": [
                 {
                     "name": "text2NoInputMode",
-                    "defaultValue": "'need to update'",
+                    "defaultValue": "undefined",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "string",
+                    "type": "any",
                     "optional": false,
                     "description": "",
                     "line": 11
@@ -110,17 +110,27 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 17,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
                 {
-                    "name": "ngOnChanges",
+                    "name": "ngDoCheck",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 13,
+                    "line": 15,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -132,7 +142,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import {ChangeDetectionStrategy, Component, Input, OnChanges} from '@angular/core';\n\n@Component({\n    selector:        'test',\n    templateUrl:     './test.component.html',\n    styleUrls:       ['./test.component.scss'],\n    changeDetection: ChangeDetectionStrategy.OnPush\n})\nclass TestComponent implements OnChanges {\n    @Input() text1InputMode = 'need to update'\n    text2NoInputMode = 'need to update'\n\n    ngOnChanges(): void {\n        this.initBadge();\n    }\n\n    initBadge(): void {\n        this.text1InputMode =\"Updated\"\n        this.text1InputMode =\"Updated\"\n    }\n}\n\nexport {TestComponent};\n",
+            "sourceCode": "import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, DoCheck} from '@angular/core';\n\n@Component({\n    selector:        'test',\n    templateUrl:     './test.component.html',\n    styleUrls:       ['./test.component.scss'],\n    changeDetection: ChangeDetectionStrategy.OnPush\n})\nclass TestComponent implements OnInit, DoCheck {\n    @Input() text1InputMode     = 'need to update'\n    text2NoInputMode: any = undefined\n\n    constructor(private cdr: ChangeDetectorRef) {}\n\n    ngDoCheck(): void {\n        // this.initBadge();\n\n        console.log(\"ok\")\n    }\n\n    ngOnInit(): void {\n        this.initBadge();\n        this.cdr.detectChanges();\n\n    }\n\n    initBadge(): void {\n        // this.text1InputMode =\"Updated\"\n        this.text2NoInputMode =\"Updated\"\n    }\n}\n\nexport {TestComponent};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -141,8 +151,35 @@
                 }
             ],
             "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "cdr",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 11,
+                "jsdoctags": [
+                    {
+                        "name": "cdr",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
             "implements": [
-                "OnChanges"
+                "OnInit",
+                "DoCheck"
             ],
             "templateData": "  <div>\n    input mode: {{text1InputMode}}\n  </div>\n  <div>\n    not input mode: {{text2NoInputMode}}\n  </div>\n"
         }
@@ -256,10 +293,8 @@
                 "file": "projects/my-lib/src/lib/test/test.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "(args) => ({\n    props:    {\n        ...args\n    },\n    template: `\n<test>\n</test>\n`\n})",
-                "rawdescription": "Setting the template on the Story<Component> object and then passing the 'props' object allows for dynamic input\ncontrols via the argsTable when interacting with the component.",
-                "description": "<p>Setting the template on the Story<Component> object and then passing the &#39;props&#39; object allows for dynamic input\ncontrols via the argsTable when interacting with the component.</p>\n"
+                "type": "Story<TestComponent>",
+                "defaultValue": "(args) => ({\n    props: args\n})"
             }
         ],
         "functions": [],
@@ -284,10 +319,8 @@
                     "file": "projects/my-lib/src/lib/test/test.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "(args) => ({\n    props:    {\n        ...args\n    },\n    template: `\n<test>\n</test>\n`\n})",
-                    "rawdescription": "Setting the template on the Story<Component> object and then passing the 'props' object allows for dynamic input\ncontrols via the argsTable when interacting with the component.",
-                    "description": "<p>Setting the template on the Story<Component> object and then passing the &#39;props&#39; object allows for dynamic input\ncontrols via the argsTable when interacting with the component.</p>\n"
+                    "type": "Story<TestComponent>",
+                    "defaultValue": "(args) => ({\n    props: args\n})"
                 }
             ]
         },
@@ -297,7 +330,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 20,
+        "count": 0,
         "status": "low",
         "files": [
             {
@@ -324,7 +357,7 @@
                 "linktype": "component",
                 "name": "TestComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/5",
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -343,9 +376,9 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "TEST_STORY",
-                "coveragePercent": 100,
-                "coverageCount": "1/1",
-                "status": "very-good"
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
             }
         ]
     }

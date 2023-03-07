@@ -28,19 +28,13 @@ export default {
     }
 } as Meta;
 
-/**
- * Setting the template on the Story<Component> object and then passing the 'props' object allows for dynamic input
- * controls via the argsTable when interacting with the component.
- */
-
-const TEST_STORY: Story = (args) => ({
-    props:    args    ,
-    template: `
-<test>
-</test>
-`
+const TEST_STORY: Story<TestComponent> = (args) => ({
+    props: args
 });
 
 export const test = TEST_STORY.bind({});
-test.args         = {};
+test.args         = {
+    text1InputMode: "test 123",
+    text2NoInputMode: "12"
+};
 

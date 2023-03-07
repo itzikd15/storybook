@@ -1,4 +1,4 @@
-import {ChangeDetectionStrategy, Component, Input, DoCheck} from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
 
 @Component({
     selector:        'test',
@@ -6,17 +6,22 @@ import {ChangeDetectionStrategy, Component, Input, DoCheck} from '@angular/core'
     styleUrls:       ['./test.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-class TestComponent implements DoCheck {
-    @Input() text1InputMode = 'need to update'
-    text2NoInputMode = 'need to update'
+class TestComponent implements OnInit {
+    @Input() text1InputMode     = 'need to update'
+    text2NoInputMode: any = undefined
 
-    ngDoCheck(): void {
+    constructor(private cdr: ChangeDetectorRef) {}
+
+
+    ngOnInit(): void {
         this.initBadge();
+        this.cdr.detectChanges();
+
     }
 
     initBadge(): void {
         this.text1InputMode ="Updated"
-        this.text1InputMode ="Updated"
+        this.text2NoInputMode ="Updated"
     }
 }
 
