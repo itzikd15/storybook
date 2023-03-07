@@ -62,7 +62,7 @@
         },
         {
             "name": "TestComponent",
-            "id": "component-TestComponent-06787bf65715aba8b7836b5468b982865ccb249466bb941284d37ea735f3d5fb760e6a39eb55eb41a0592b3cbffca47c40e14bc86b8da11dcdf40c701389ff69",
+            "id": "component-TestComponent-53680000db957fe2f17889550a0331cddbf007e067e2ea997efb04a4390cc3f7bb4f9ac77d3f922a275aceda2a83cfa202a5f9a2a2e19dd2a192074f10e06694",
             "file": "projects/my-lib/src/lib/test/test.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -94,10 +94,10 @@
             "propertiesClass": [
                 {
                     "name": "text2NoInputMode",
-                    "defaultValue": "undefined",
+                    "defaultValue": "'need to update'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any",
+                    "type": "string",
                     "optional": false,
                     "description": "",
                     "line": 11
@@ -105,32 +105,12 @@
             ],
             "methodsClass": [
                 {
-                    "name": "initBadge",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 27,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "ngDoCheck",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 13,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -142,7 +122,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, DoCheck} from '@angular/core';\n\n@Component({\n    selector:        'test',\n    templateUrl:     './test.component.html',\n    styleUrls:       ['./test.component.scss'],\n    changeDetection: ChangeDetectionStrategy.OnPush\n})\nclass TestComponent implements OnInit, DoCheck {\n    @Input() text1InputMode     = 'need to update'\n    text2NoInputMode: any = undefined\n\n    constructor(private cdr: ChangeDetectorRef) {}\n\n    ngDoCheck(): void {\n        // this.initBadge();\n\n        console.log(\"ok\")\n    }\n\n    ngOnInit(): void {\n        this.initBadge();\n        this.cdr.detectChanges();\n\n    }\n\n    initBadge(): void {\n        // this.text1InputMode =\"Updated\"\n        this.text2NoInputMode =\"Updated\"\n    }\n}\n\nexport {TestComponent};\n",
+            "sourceCode": "import { ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';\n\n@Component({\n    selector:        'test',\n    templateUrl:     './test.component.html',\n    styleUrls:       ['./test.component.scss'],\n    changeDetection: ChangeDetectionStrategy.OnPush\n})\nclass TestComponent implements OnInit {\n    @Input() text1InputMode     = 'need to update'\n    text2NoInputMode   = 'need to update'\n\n    ngOnInit(): void {\n        this.text1InputMode =\"Updated\"\n        this.text2NoInputMode =\"Updated\"\n    }\n\n}\n\nexport {TestComponent};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -151,35 +131,8 @@
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "cdr",
-                        "type": "ChangeDetectorRef",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 11,
-                "jsdoctags": [
-                    {
-                        "name": "cdr",
-                        "type": "ChangeDetectorRef",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
             "implements": [
-                "OnInit",
-                "DoCheck"
+                "OnInit"
             ],
             "templateData": "  <div>\n    input mode: {{text1InputMode}}\n  </div>\n  <div>\n    not input mode: {{text2NoInputMode}}\n  </div>\n"
         }
@@ -357,7 +310,7 @@
                 "linktype": "component",
                 "name": "TestComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
