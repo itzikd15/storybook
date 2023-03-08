@@ -8,7 +8,7 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} f
 })
 class TestComponent implements OnInit {
     @Input() text1InputMode     = 'need to update'
-    text2NoInputMode: any = undefined
+    text2NoInputMode  = 'need to update'
 
     constructor(private cdr: ChangeDetectorRef) {}
 
