@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
 
 @Component({
     selector:        'test',
@@ -8,21 +8,13 @@ import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} f
 })
 class TestComponent implements OnInit {
     @Input() text1InputMode     = 'need to update'
-    text2NoInputMode  = 'need to update'
-
-    constructor(private cdr: ChangeDetectorRef) {}
-
+    text2NoInputMode   = 'need to update'
 
     ngOnInit(): void {
-        this.initBadge();
-        this.cdr.detectChanges();
-
-    }
-
-    initBadge(): void {
         this.text1InputMode ="Updated"
         this.text2NoInputMode ="Updated"
     }
+
 }
 
 export {TestComponent};
