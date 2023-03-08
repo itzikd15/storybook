@@ -62,7 +62,7 @@
         },
         {
             "name": "TestComponent",
-            "id": "component-TestComponent-06787bf65715aba8b7836b5468b982865ccb249466bb941284d37ea735f3d5fb760e6a39eb55eb41a0592b3cbffca47c40e14bc86b8da11dcdf40c701389ff69",
+            "id": "component-TestComponent-8676884f207d331f71ce799b41e13a7e4951e9dea284251f2599177e4fd8b82027165462cd93e170ba25ee85abe45942f7255758ec8cc6c3f11f0d2568027806",
             "file": "projects/my-lib/src/lib/test/test.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -94,10 +94,10 @@
             "propertiesClass": [
                 {
                     "name": "text2NoInputMode",
-                    "defaultValue": "undefined",
+                    "defaultValue": "'need to update'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "any",
+                    "type": "string",
                     "optional": false,
                     "description": "",
                     "line": 11
@@ -110,17 +110,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 27,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
-                {
-                    "name": "ngDoCheck",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 15,
+                    "line": 22,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -130,7 +120,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 16,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -142,7 +132,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit, DoCheck} from '@angular/core';\n\n@Component({\n    selector:        'test',\n    templateUrl:     './test.component.html',\n    styleUrls:       ['./test.component.scss'],\n    changeDetection: ChangeDetectionStrategy.OnPush\n})\nclass TestComponent implements OnInit, DoCheck {\n    @Input() text1InputMode     = 'need to update'\n    text2NoInputMode: any = undefined\n\n    constructor(private cdr: ChangeDetectorRef) {}\n\n    ngDoCheck(): void {\n        // this.initBadge();\n\n        console.log(\"ok\")\n    }\n\n    ngOnInit(): void {\n        this.initBadge();\n        this.cdr.detectChanges();\n\n    }\n\n    initBadge(): void {\n        // this.text1InputMode =\"Updated\"\n        this.text2NoInputMode =\"Updated\"\n    }\n}\n\nexport {TestComponent};\n",
+            "sourceCode": "import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';\n\n@Component({\n    selector:        'test',\n    templateUrl:     './test.component.html',\n    styleUrls:       ['./test.component.scss'],\n    changeDetection: ChangeDetectionStrategy.OnPush\n})\nclass TestComponent implements OnInit {\n    @Input() text1InputMode     = 'need to update'\n    text2NoInputMode  = 'need to update'\n\n    constructor(private cdr: ChangeDetectorRef) {}\n\n\n    ngOnInit(): void {\n        this.initBadge();\n        this.cdr.detectChanges();\n\n    }\n\n    initBadge(): void {\n        this.text1InputMode =\"Updated\"\n        this.text2NoInputMode =\"Updated\"\n    }\n}\n\nexport {TestComponent};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -178,8 +168,7 @@
                 ]
             },
             "implements": [
-                "OnInit",
-                "DoCheck"
+                "OnInit"
             ],
             "templateData": "  <div>\n    input mode: {{text1InputMode}}\n  </div>\n  <div>\n    not input mode: {{text2NoInputMode}}\n  </div>\n"
         }
@@ -357,7 +346,7 @@
                 "linktype": "component",
                 "name": "TestComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {

@@ -4,7 +4,6 @@ import {Meta, moduleMetadata, Story} from '@storybook/angular';
 import {withDesign} from 'storybook-addon-designs';
 import {TestComponent} from './test.component';
 import {TestModule} from './test.module';
-import {FlexModule} from '@angular/flex-layout';
 
 export default {
     title:      'Components/Test',
@@ -12,7 +11,7 @@ export default {
     decorators: [
         withDesign,
         moduleMetadata({
-            imports: [CommonModule, HttpClientModule, TestModule, FlexModule]
+            imports: [CommonModule, HttpClientModule, TestModule]
         })
     ],
     parameters: {
