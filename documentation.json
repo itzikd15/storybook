@@ -30,6 +30,147 @@
     "directives": [],
     "components": [
         {
+            "name": "ChipComponent",
+            "id": "component-ChipComponent-8e4dd12013427c0594617d2357e5e0dbfdbcfd9b0d2506d3fb60991b44a653b18c77757ae67e42aac6a2b3d321ddd47b003f227044968b92703cb6542bfeef84",
+            "file": "projects/my-lib/src/lib/chip/chip.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [
+                "ViewEncapsulation.Emulated"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "spt-chip",
+            "styleUrls": [
+                "./chip.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./chip.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "isDisabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isReadOnly",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "isRemovable",
+                    "defaultValue": "true",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "label",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "string | undefined",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "deleteClick",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "EventEmitter<MouseEvent>"
+                },
+                {
+                    "name": "doubleClick",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "EventEmitter<void>"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "onClick",
+                    "args": [
+                        {
+                            "name": "$event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "$event",
+                            "type": "MouseEvent",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onDoubleClick",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 32,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import {ChangeDetectionStrategy, Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';\n\n@Component({\n    selector:        'spt-chip',\n    templateUrl:     './chip.component.html',\n    styleUrls:       ['./chip.component.scss'],\n    encapsulation:   ViewEncapsulation.Emulated,\n    changeDetection: ChangeDetectionStrategy.OnPush\n})\nclass ChipComponent {\n    @Input() label: string | undefined;\n\n    @Input() isRemovable = true;\n\n    @Input() isDisabled = false;\n\n    @Input() isReadOnly = false;\n\n    @Output() deleteClick: EventEmitter<MouseEvent>;\n\n    @Output() doubleClick: EventEmitter<void>;\n\n    constructor() {\n        this.deleteClick = new EventEmitter<MouseEvent>();\n        this.doubleClick = new EventEmitter<void>();\n    }\n\n    onClick($event: MouseEvent): void {\n        this.deleteClick.emit($event);\n    }\n\n    onDoubleClick(): void {\n        this.doubleClick.emit();\n    }\n}\n\nexport {ChipComponent};\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./chip.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [],
+                "line": 21
+            },
+            "templateData": "<div class=\"spt-chip\" [class.disabled]=\"isDisabled === true\" [class.readOnly]=\"isReadOnly === true\"      (dblclick)=\"onDoubleClick()\">\n  <span class=\"label\" *ngIf=\"label\">\n    {{label}}:\n  </span>\n  <ng-content></ng-content>\n  <mat-icon *ngIf=\"isRemovable && isDisabled !== true && isReadOnly !== true\"\n            class=\"close-icon spt-icon-size-l clickable\" (click)=\"onClick($event)\" svgIcon=\"close\"></mat-icon>\n</div>\n"
+        },
+        {
             "name": "MyLibComponent",
             "id": "component-MyLibComponent-fd3379c8b86be78a8c856fb6f0cd9a1ff51dc154f4a6584bac52e3940ea54c1be578efbb9807129e697fe2332985e7c9323efc1094e1af92b0903ed2d9a702a2",
             "file": "projects/my-lib/src/lib/my-lib.component.ts",
@@ -62,7 +203,7 @@
         },
         {
             "name": "TestComponent",
-            "id": "component-TestComponent-8676884f207d331f71ce799b41e13a7e4951e9dea284251f2599177e4fd8b82027165462cd93e170ba25ee85abe45942f7255758ec8cc6c3f11f0d2568027806",
+            "id": "component-TestComponent-cb5baf84227a9591ef77648dcb420c8d22a3798c165ef9cc97fc3ca592cc45972dbc4cff2efe6fa1a7f87d63d05927e85889203511b7032eefba0e47903f5ab7",
             "file": "projects/my-lib/src/lib/test/test.component.ts",
             "changeDetection": "ChangeDetectionStrategy.OnPush",
             "encapsulation": [],
@@ -82,10 +223,10 @@
             "inputsClass": [
                 {
                     "name": "text1InputMode",
-                    "defaultValue": "'need to update'",
+                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 10,
+                    "line": 15,
                     "type": "string",
                     "decorators": []
                 }
@@ -100,27 +241,17 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 11
+                    "line": 16
                 }
             ],
             "methodsClass": [
-                {
-                    "name": "initBadge",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 22,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
                 {
                     "name": "ngOnInit",
                     "args": [],
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 16,
+                    "line": 18,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -132,7 +263,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnInit} from '@angular/core';\n\n@Component({\n    selector:        'test',\n    templateUrl:     './test.component.html',\n    styleUrls:       ['./test.component.scss'],\n    changeDetection: ChangeDetectionStrategy.OnPush\n})\nclass TestComponent implements OnInit {\n    @Input() text1InputMode     = 'need to update'\n    text2NoInputMode  = 'need to update'\n\n    constructor(private cdr: ChangeDetectorRef) {}\n\n\n    ngOnInit(): void {\n        this.initBadge();\n        this.cdr.detectChanges();\n\n    }\n\n    initBadge(): void {\n        this.text1InputMode =\"Updated\"\n        this.text2NoInputMode =\"Updated\"\n    }\n}\n\nexport {TestComponent};\n",
+            "sourceCode": "import {\n    ChangeDetectionStrategy,\n    Component,\n    Input,\n    OnInit,\n} from '@angular/core';\n\n@Component({\n    selector:        'test',\n    templateUrl:     './test.component.html',\n    styleUrls:       ['./test.component.scss'],\n    changeDetection: ChangeDetectionStrategy.OnPush\n})\nclass TestComponent implements OnInit {\n    @Input() text1InputMode     = ''\n    text2NoInputMode   = 'need to update'\n\n    ngOnInit(): void {\n        this.text2NoInputMode =\"Updated\"\n    }\n\n}\n\nexport {TestComponent};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -141,32 +272,6 @@
                 }
             ],
             "stylesData": "",
-            "constructorObj": {
-                "name": "constructor",
-                "description": "",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "args": [
-                    {
-                        "name": "cdr",
-                        "type": "ChangeDetectorRef",
-                        "deprecated": false,
-                        "deprecationMessage": ""
-                    }
-                ],
-                "line": 11,
-                "jsdoctags": [
-                    {
-                        "name": "cdr",
-                        "type": "ChangeDetectorRef",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "tagName": {
-                            "text": "param"
-                        }
-                    }
-                ]
-            },
             "implements": [
                 "OnInit"
             ],
@@ -174,6 +279,50 @@
         }
     ],
     "modules": [
+        {
+            "name": "ChipModule",
+            "id": "module-ChipModule-fd53c3f94aa9559f8ad3b687eb0b47a9363d03ce2a1fdcd9f65a3441ccfb77c1b5c5ee7e861477f7d3fc78a8917e674e0ac316a00843c637aa35c12a0e1f5c76",
+            "description": "",
+            "deprecationMessage": "",
+            "deprecated": false,
+            "file": "projects/my-lib/src/lib/chip/chip.module.ts",
+            "methods": [],
+            "sourceCode": "import {CommonModule} from '@angular/common';\nimport {NgModule} from '@angular/core';\nimport {MatIconModule} from '@angular/material/icon';\nimport {ChipComponent} from '../chip/chip.component';\n\n@NgModule({\n    declarations: [\n        ChipComponent\n    ],\n    imports:      [\n        MatIconModule,\n        CommonModule\n    ],\n    exports:      [\n        ChipComponent\n    ]\n})\nclass ChipModule {\n\n}\nexport {ChipModule};\n",
+            "children": [
+                {
+                    "type": "providers",
+                    "elements": []
+                },
+                {
+                    "type": "declarations",
+                    "elements": [
+                        {
+                            "name": "ChipComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "imports",
+                    "elements": []
+                },
+                {
+                    "type": "exports",
+                    "elements": [
+                        {
+                            "name": "ChipComponent"
+                        }
+                    ]
+                },
+                {
+                    "type": "bootstrap",
+                    "elements": []
+                },
+                {
+                    "type": "classes",
+                    "elements": []
+                }
+            ]
+        },
         {
             "name": "MyLibModule",
             "id": "module-MyLibModule-23565f465eaecb0a95ba8ea47dccb201d13355012ae24bee58735c0bccee667b3ee02412b8806a38f81908105ae194bf596b6852a4f0eb0900c85da0f3c24958",
@@ -266,6 +415,50 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "actionsData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "object",
+                "defaultValue": "{\n    deleteClick: action('onDeleteClick'),\n    doubleClick: action('onDoubleClick')\n}",
+                "rawdescription": "Defining this actionsData object and action fn's allow for us to still register the events in SB even when using the\ntemplate property for things like transclusion (content projection). See the RemovableChipTemplate and\nNonRemovableChipTemplate stories.\n\nRegister the actions object and any custom functions within the Story template.",
+                "description": "<p>Defining this actionsData object and action fn&#39;s allow for us to still register the events in SB even when using the\ntemplate property for things like transclusion (content projection). See the RemovableChipTemplate and\nNonRemovableChipTemplate stories.</p>\n<p>Register the actions object and any custom functions within the Story template.</p>\n"
+            },
+            {
+                "name": "PROJECTED_CONTENT",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "string",
+                "defaultValue": "'Content'"
+            },
+            {
+                "name": "removableChip",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "",
+                "defaultValue": "RemovableChipTemplate.bind({})"
+            },
+            {
+                "name": "RemovableChipTemplate",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story<ChipComponent>",
+                "defaultValue": "(args) => ({\n    props:    args\n})",
+                "rawdescription": "Here is an example of using the template property to define our component, and also passing dynamic input properties\nfor the user to interact with the projected content and change what string is projected.\nNote:\n- We are passing the actionsData object in the template of the story in the props object\n- Also passing any custom defined functions to be used in the template here through the props object\n- We define a custom input 'projectedContent' using Ng template interpolation '{{ }}' and in the exported story we\ndefine the said new custom input.\n\nShould also be able to use this for named slots transclusion. For example:\n<spt-chip>\n    <div slot1>{{slot1Content}}</div>\n    <div slot2>{{slot2Content}}</div>\n    <div slot3>{{slot3Content}}</div>\n</spt-chip>`",
+                "description": "<p>Here is an example of using the template property to define our component, and also passing dynamic input properties\nfor the user to interact with the projected content and change what string is projected.\nNote:</p>\n<ul>\n<li>We are passing the actionsData object in the template of the story in the props object</li>\n<li>Also passing any custom defined functions to be used in the template here through the props object</li>\n<li>We define a custom input &#39;projectedContent&#39; using Ng template interpolation &#39;{{ }}&#39; and in the exported story we\ndefine the said new custom input.</li>\n</ul>\n<p>Should also be able to use this for named slots transclusion. For example:\n<spt-chip>\n    <div slot1>{{slot1Content}}</div>\n    <div slot2>{{slot2Content}}</div>\n    <div slot3>{{slot3Content}}</div>\n</spt-chip>`</p>\n"
+            },
+            {
                 "name": "test",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -286,10 +479,135 @@
                 "defaultValue": "(args) => ({\n    props: args\n})"
             }
         ],
-        "functions": [],
+        "functions": [
+            {
+                "name": "hideChip",
+                "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": []
+            },
+            {
+                "name": "onDeleteClick",
+                "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": []
+            },
+            {
+                "name": "onDoubleClick",
+                "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "ctype": "miscellaneous",
+                "subtype": "function",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "args": []
+            }
+        ],
         "typealiases": [],
-        "enumerations": [],
+        "enumerations": [
+            {
+                "name": "ChipStoryNames",
+                "childs": [
+                    {
+                        "name": "REMOVABLE_CHIP",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Removable"
+                    },
+                    {
+                        "name": "DOUBLE_CLICK",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Double-Click"
+                    },
+                    {
+                        "name": "NON_REMOVABLE",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Non-Removable"
+                    },
+                    {
+                        "name": "DISABLED",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Disabled"
+                    },
+                    {
+                        "name": "NO_LABEL",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "No Label"
+                    },
+                    {
+                        "name": "READ_ONLY",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "value": "Read Only"
+                    }
+                ],
+                "ctype": "miscellaneous",
+                "subtype": "enum",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "file": "projects/my-lib/src/lib/chip/chip.stories.ts"
+            }
+        ],
         "groupedVariables": {
+            "projects/my-lib/src/lib/chip/chip.stories.ts": [
+                {
+                    "name": "actionsData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "object",
+                    "defaultValue": "{\n    deleteClick: action('onDeleteClick'),\n    doubleClick: action('onDoubleClick')\n}",
+                    "rawdescription": "Defining this actionsData object and action fn's allow for us to still register the events in SB even when using the\ntemplate property for things like transclusion (content projection). See the RemovableChipTemplate and\nNonRemovableChipTemplate stories.\n\nRegister the actions object and any custom functions within the Story template.",
+                    "description": "<p>Defining this actionsData object and action fn&#39;s allow for us to still register the events in SB even when using the\ntemplate property for things like transclusion (content projection). See the RemovableChipTemplate and\nNonRemovableChipTemplate stories.</p>\n<p>Register the actions object and any custom functions within the Story template.</p>\n"
+                },
+                {
+                    "name": "PROJECTED_CONTENT",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "defaultValue": "'Content'"
+                },
+                {
+                    "name": "removableChip",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "defaultValue": "RemovableChipTemplate.bind({})"
+                },
+                {
+                    "name": "RemovableChipTemplate",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story<ChipComponent>",
+                    "defaultValue": "(args) => ({\n    props:    args\n})",
+                    "rawdescription": "Here is an example of using the template property to define our component, and also passing dynamic input properties\nfor the user to interact with the projected content and change what string is projected.\nNote:\n- We are passing the actionsData object in the template of the story in the props object\n- Also passing any custom defined functions to be used in the template here through the props object\n- We define a custom input 'projectedContent' using Ng template interpolation '{{ }}' and in the exported story we\ndefine the said new custom input.\n\nShould also be able to use this for named slots transclusion. For example:\n<spt-chip>\n    <div slot1>{{slot1Content}}</div>\n    <div slot2>{{slot2Content}}</div>\n    <div slot3>{{slot3Content}}</div>\n</spt-chip>`",
+                    "description": "<p>Here is an example of using the template property to define our component, and also passing dynamic input properties\nfor the user to interact with the projected content and change what string is projected.\nNote:</p>\n<ul>\n<li>We are passing the actionsData object in the template of the story in the props object</li>\n<li>Also passing any custom defined functions to be used in the template here through the props object</li>\n<li>We define a custom input &#39;projectedContent&#39; using Ng template interpolation &#39;{{ }}&#39; and in the exported story we\ndefine the said new custom input.</li>\n</ul>\n<p>Should also be able to use this for named slots transclusion. For example:\n<spt-chip>\n    <div slot1>{{slot1Content}}</div>\n    <div slot2>{{slot2Content}}</div>\n    <div slot3>{{slot3Content}}</div>\n</spt-chip>`</p>\n"
+                }
+            ],
             "projects/my-lib/src/lib/test/test.stories.ts": [
                 {
                     "name": "test",
@@ -313,15 +631,177 @@
                 }
             ]
         },
-        "groupedFunctions": {},
-        "groupedEnumerations": {},
+        "groupedFunctions": {
+            "projects/my-lib/src/lib/chip/chip.stories.ts": [
+                {
+                    "name": "hideChip",
+                    "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": []
+                },
+                {
+                    "name": "onDeleteClick",
+                    "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": []
+                },
+                {
+                    "name": "onDoubleClick",
+                    "file": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                    "ctype": "miscellaneous",
+                    "subtype": "function",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "args": []
+                }
+            ]
+        },
+        "groupedEnumerations": {
+            "projects/my-lib/src/lib/chip/chip.stories.ts": [
+                {
+                    "name": "ChipStoryNames",
+                    "childs": [
+                        {
+                            "name": "REMOVABLE_CHIP",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Removable"
+                        },
+                        {
+                            "name": "DOUBLE_CLICK",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Double-Click"
+                        },
+                        {
+                            "name": "NON_REMOVABLE",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Non-Removable"
+                        },
+                        {
+                            "name": "DISABLED",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Disabled"
+                        },
+                        {
+                            "name": "NO_LABEL",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "No Label"
+                        },
+                        {
+                            "name": "READ_ONLY",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "value": "Read Only"
+                        }
+                    ],
+                    "ctype": "miscellaneous",
+                    "subtype": "enum",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "file": "projects/my-lib/src/lib/chip/chip.stories.ts"
+                }
+            ]
+        },
         "groupedTypeAliases": {}
     },
     "routes": [],
     "coverage": {
-        "count": 0,
+        "count": 15,
         "status": "low",
         "files": [
+            {
+                "filePath": "projects/my-lib/src/lib/chip/chip.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ChipComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/10",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "hideChip",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "onDeleteClick",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "type": "function",
+                "linktype": "miscellaneous",
+                "linksubtype": "function",
+                "name": "onDoubleClick",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "actionsData",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
+            {
+                "filePath": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "PROJECTED_CONTENT",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "removableChip",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/my-lib/src/lib/chip/chip.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "RemovableChipTemplate",
+                "coveragePercent": 100,
+                "coverageCount": "1/1",
+                "status": "very-good"
+            },
             {
                 "filePath": "projects/my-lib/src/lib/my-lib.component.ts",
                 "type": "component",
@@ -346,7 +826,7 @@
                 "linktype": "component",
                 "name": "TestComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {

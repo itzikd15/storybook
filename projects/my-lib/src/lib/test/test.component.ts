@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    Input,
+    OnInit,
+} from '@angular/core';
 
 @Component({
     selector:        'test',
@@ -7,11 +12,10 @@ import { ChangeDetectionStrategy, Component, Input, OnInit} from '@angular/core'
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 class TestComponent implements OnInit {
-    @Input() text1InputMode     = 'need to update'
+    @Input() text1InputMode     = ''
     text2NoInputMode   = 'need to update'
 
     ngOnInit(): void {
-        this.text1InputMode ="Updated"
         this.text2NoInputMode ="Updated"
     }
 

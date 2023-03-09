@@ -32,5 +32,7 @@ const TEST_STORY: Story<TestComponent> = (args) => ({
 });
 
 export const test = TEST_STORY.bind({});
-test.args         = {};
+test.args         = {
+    text1InputMode: "a"
+};
 

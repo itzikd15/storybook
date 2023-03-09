@@ -2,13 +2,16 @@
   "name": "my-lib",
   "version": "0.0.0",
   "scripts": {
-    "ng": "ng",
+    "my-lib:package:development": "ng build my-lib -c=development --watch",
+    "my-lib:package": "ng build my-lib --configuration production",
+    "my-lib:pack": "npm pack ./dist/my-lib",
+    "my-lib:package & pack": "npm run my-lib:package; npm run my-lib:pack",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "docs:json": "compodoc -p ./tsconfig.json -e json -d .",
-    "storybook": "ng run my-lib:storybook",
+    "storybook": "npm run docs:json; ng run my-lib:storybook",
     "build-storybook": "ng run my-lib:build-storybook",
     "clear node modules": "rm -r ./node_modules; rm ./package-lock.json; rm -r ./projects/my-lib/node_modules; rm ./projects/my-lib/package-lock.json",
     "install node modules": "npm install --legacy-peer-deps; cd ./projects/my-lib & npm install --legacy-peer-deps"
